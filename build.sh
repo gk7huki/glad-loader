@@ -30,5 +30,5 @@ for i in ${!archs[@]}; do
 
   ${prefix[$i]}gcc ${ccflags[$i]} -Iinclude -c src/glad.c -o obj/${archs[$i]}/glad.o
   ${prefix[$i]}ar crs lib/${archs[$i]}/libglad-static.a obj/${archs[$i]}/glad.o
-  ${prefix[$i]}strip lib/${archs[$i]}/libglad-static.a
+  ${prefix[$i]}strip --strip-unneeded lib/${archs[$i]}/libglad-static.a
 done
